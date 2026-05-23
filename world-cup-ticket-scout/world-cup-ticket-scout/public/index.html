@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Cup Ticket Scout</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Compliant price monitor</p>
+        <h1>World Cup Ticket Scout</h1>
+        <p class="muted">Track API-supported ticket marketplaces, compare lowest known prices, and send alerts when a watch drops below your threshold.</p>
+      </div>
+      <div class="heroActions">
+        <button id="checkNowBtn">Check now</button>
+        <button id="testAlertBtn" class="secondary">Test alert</button>
+      </div>
+    </header>
+
+    <section class="statusGrid">
+      <article class="card">
+        <h2>Provider status</h2>
+        <div id="providers" class="providerList"></div>
+      </article>
+      <article class="card">
+        <h2>Scanner status</h2>
+        <div id="scannerStatus" class="muted">Loading...</div>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Add watch</h2>
+      <form id="watchForm" class="watchForm">
+        <label>Name<input name="name" placeholder="USA group game / Final / Semifinal" required></label>
+        <label>Search query<input name="query" placeholder="FIFA World Cup 2026" required></label>
+        <label>City<input name="city" placeholder="East Rutherford"></label>
+        <label>Venue<input name="venue" placeholder="MetLife Stadium"></label>
+        <label>Date from<input name="dateFrom" type="date"></label>
+        <label>Date to<input name="dateTo" type="date"></label>
+        <label>Quantity<input name="quantity" type="number" min="1" value="2"></label>
+        <label>Max price<input name="maxPrice" type="number" min="0" value="500"></label>
+        <label>Currency<input name="currency" value="USD"></label>
+        <label class="wide">Providers
+          <select name="providers" multiple>
+            <option value="ticketmaster" selected>Ticketmaster</option>
+            <option value="seatgeek" selected>SeatGeek</option>
+            <option value="fifa" selected>FIFA official resale link</option>
+            <option value="manual">Manual links</option>
+            <option value="stubhub">StubHub placeholder</option>
+          </select>
+          <small>Hold Ctrl/Command to select multiple.</small>
+        </label>
+        <label class="wide">Manual marketplace URLs<textarea name="manualUrls" placeholder="https://fwc26-resale-usd.tickets.fifa.com/"></textarea></label>
+        <label class="wide">Notes<textarea name="notes" placeholder="Seat preference, section notes, travel constraints..."></textarea></label>
+        <button type="submit">Save watch</button>
+      </form>
+    </section>
+
+    <section class="gridTwo">
+      <article class="card">
+        <h2>Watchlist</h2>
+        <div id="watchlist" class="list"></div>
+      </article>
+      <article class="card">
+        <h2>Latest snapshots</h2>
+        <div id="snapshots" class="list"></div>
+      </article>
+    </section>
+  </main>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
