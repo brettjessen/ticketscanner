@@ -1,0 +1,20 @@
+[
+  {
+    "id": "sample-final-watch",
+    "name": "World Cup Final example watch",
+    "query": "FIFA World Cup Final 2026",
+    "city": "East Rutherford",
+    "venue": "MetLife Stadium",
+    "dateFrom": "2026-07-19",
+    "dateTo": "2026-07-20",
+    "currency": "USD",
+    "quantity": 2,
+    "maxPrice": 750,
+    "enabled": true,
+    "providers": ["ticketmaster", "seatgeek", "fifa"],
+    "manualUrls": [
+      "https://fwc26-resale-usd.tickets.fifa.com/"
+    ],
+    "notes": "Edit or delete this example from the dashboard."
+  }
+]
